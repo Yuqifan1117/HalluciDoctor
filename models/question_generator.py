@@ -110,6 +110,11 @@ def question_generation(question_type, context, instruct, sub_sentence=True):
             i = random.randint(0, len(fusion_activity[k])-1)
             valid_answers.append(' '.join(fusion_activity[k][i]))
         valid_qa_pairs["llm_questions"] = qgqa_generation(context, valid_answers)
+        pred_questions = valid_qa_pairs["llm_questions"][0].split('\n')
+        for pred_question, answer in zip(pred_questions, valid_answers):
+            pred_question = pred_question.split('. ')[-1]
+            valid_qa_pairs['questions'].append(pred_question)
+            valid_qa_pairs['answers'].append(answer)
         QA_response.append(valid_qa_pairs)
     
     return QA_response
