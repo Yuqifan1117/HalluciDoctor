@@ -9,8 +9,8 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # scene graph parser for valid information extraction
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
-sng_tokenizer = AutoTokenizer.from_pretrained("lizhuang144/flan-t5-base-VG-factual-sg", local_files_only=True)
-sng_model = AutoModelForSeq2SeqLM.from_pretrained("lizhuang144/flan-t5-base-VG-factual-sg", local_files_only=True)
+sng_tokenizer = AutoTokenizer.from_pretrained("lizhuang144/flan-t5-base-VG-factual-sg")
+sng_model = AutoModelForSeq2SeqLM.from_pretrained("lizhuang144/flan-t5-base-VG-factual-sg")
 # datasets
 details = json.load(open('datasets/detail_23k.json'))
 coco_category = json.load(open('utils/coco_category.json'))

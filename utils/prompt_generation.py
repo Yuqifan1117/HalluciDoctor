@@ -1,6 +1,6 @@
 import requests
 from retrying import retry
-import openai
+from openai import OpenAI
 
 @retry(stop_max_attempt_number=10, wait_fixed=2000)
 def send_request(data):
@@ -21,30 +21,20 @@ def send_request(data):
     #     print(f"Error: {e}")
 
     # chinese api for completion or chat
-    openai.api_key = ""
-    openai.api_base = ""
-    
-
+    client = OpenAI(
+        api_key="",
+        base_url=""
+    )
     try:
         # stream
-        messages = data["messages"]
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model=data['model'],
             messages=data["messages"],
             temperature=data["temperature"],
-            stream=True,
-        )        
-        completion = {'role': '', 'content': ''}
-        for event in response:
-            if event['choices'][0]['finish_reason'] == 'stop':
-                # print(f'收到的完成数据: {completion}')
-                break
-            for delta_k, delta_v in event['choices'][0]['delta'].items():
-                # print(f'流响应数据: {delta_k} = {delta_v}')
-                completion[delta_k] += delta_v
-        messages.append(completion)  # 直接在传入参数 messages 中追加消息
-        content = completion['content']
-        return content
+            stream=False,
+        )       
+        content = response.choices[0].message.content
+        return content       
     except requests.exceptions.Timeout as e:                                           
         print(f"Timeout Error: {e}")
     except Exception as e:
