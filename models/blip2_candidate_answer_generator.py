@@ -19,7 +19,7 @@ def mllm_experts_load(model_id, device):
     return model, vis_processors
 
 def candidate_answers_generation(LLaVA_data_infos, LLaVA_QG, model, processors, device, output_file):
-    image_root = '/home/qifan/datasets/coco/train2017/'
+    image_root = '/home1/yqf/datasets/coco/train2017/'
     mllm_answers = dict()
     for detail in tqdm.tqdm(LLaVA_data_infos):
         image_qa_pairs = LLaVA_QG[detail['id']]

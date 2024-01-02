@@ -1,5 +1,4 @@
 import argparse
-import os
 import random
 
 import numpy as np
@@ -48,6 +47,7 @@ def setup_seeds(config):
 # ========================================
 #             Model Initialization
 # ========================================
+ckpt = "/home1/yqf/MiniGPT-4/checkpoints/pretrained_minigpt4_7b.pth"
 
 conv_dict = {'pretrain_vicuna0': CONV_VISION_Vicuna0,
              'pretrain_llama2': CONV_VISION_LLama2}
@@ -57,6 +57,7 @@ args = parse_args()
 cfg = Config(args)
 
 model_config = cfg.model_cfg
+model_config.ckpt = ckpt
 model_config.device_8bit = args.gpu_id
 model_cls = registry.get_model_class(model_config.arch)
 model = model_cls.from_config(model_config).to('cuda:{}'.format(args.gpu_id))
@@ -85,7 +86,7 @@ coco_category = json.load(open('utils/coco_category.json'))
 LLaVA_QG = json.load(open('results/LLaVA_question_checks.json'))
 detail_info = json.load(open('datasets/detail_23k.json'))
 
-
+# PYTHONPATH=./ python models/minigpt4_candidate_answer_generator.py --cfg-path eval_configs/minigpt4_eval.yaml  --gpu-id 3
 if __name__ == '__main__':
     chat_state = CONV_VISION.copy()
     minigpt4_mllm_answers = dict()
@@ -123,5 +124,5 @@ if __name__ == '__main__':
                     "pred_answer": response,
                 }
                 minigpt4_mllm_answers[detail['id']].append(current_instructblip_answer)
-    json.dump(minigpt4_mllm_answers, open('results/LLaVA_question_checks.json', 'w'))
+    json.dump(minigpt4_mllm_answers, open('results/answer_checks_minigpt4.json', 'w'))
 

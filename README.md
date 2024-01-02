@@ -9,7 +9,7 @@
 - Dataset preparation: LLaVA-158K; coco_category.json; coco_object_co_occur.json; object_sample for 'counterfactual images' following **[INSTALL.md](INSTALL.md)**.
 - HalluciDoctor Framework
     1. PYTHONPATH=./ python models/question_generator.py
-    2. PYTHONPATH=./ python models/blip2_candidate_answer_generator.py; PYTHONPATH=./ python models/instructblip_candidate_answer_generator.py; PYTHONPATH=./ python models/minigpt4_candidate_answer_generator.py
+    2. PYTHONPATH=./ python models/blip2_candidate_answer_generator.py; PYTHONPATH=./ python models/instructblip_candidate_answer_generator.py; PYTHONPATH=./ python models/minigpt4_candidate_answer_generator.py --cfg-path eval_configs/minigpt4_eval.yaml  --gpu-id 0
     3. PYTHONPATH=./ python models/consistency_crosscheck.py; PYTHONPATH=./ python models/consistency_crosscheck_object.py
     4. PYTHONPATH=./ python models/refine_dataset.py -> **LLaVA+**
     5. PYTHONPATH=./ python models/seesaw_counterfactual_generation.py -> **LLaVA++**

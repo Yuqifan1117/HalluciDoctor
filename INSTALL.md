@@ -3,11 +3,12 @@
 - MLLM experts
     1. BLIP2: Salesforce/blip2-flan-t5-xl # default download
     2. InstructBLIP: blip2_vicuna_instruct # default download
-    ```bash
-    git clone https://github.com/salesforce/LAVIS.git
-    cd LAVIS
-    pip install -e .
-    ```
+        ```bash
+        git clone https://github.com/salesforce/LAVIS.git
+        cd LAVIS
+        pip install -e .
+        ```
+        update *llm_model* in LAVIS/lavis/configs/models/blip2/blip2_instruct_vicuna7b.yaml to the path of vicuna (vicuna-7b-1.1)
     3. MiniGPT4: https://github.com/Vision-CAIR/MiniGPT-4
 - utils
     1. Answer chunks extraction: lizhuang144/flan-t5-base-VG-factual-sg (Huggingface, will be download automatically)
