@@ -1,7 +1,7 @@
 # HalluciDoctor: Mitigating Hallucinatory Toxicity in Visual Instruction Data
 ![example-2_00](https://github.com/Yuqifan1117/HalluciDoctor/assets/48062034/659bedd2-5da0-42dc-bf60-230f6aa03445)
 ## 🔥 News
-- This paper is accepted by CVPR 2024 (2024.2.27)
+- This paper has been accepted by CVPR 2024!
 - This is the official repository for the paper "HalluciDoctor: Mitigating Hallucinatory Toxicity in Visual Instruction Data". 🍇 [[Read our arXiv Paper](https://arxiv.org/abs/2311.13614)].
 - We update the main code of **HalluciDoctor** and corresponding datasets *LLaVA+* and *LLaVA++*.
 
