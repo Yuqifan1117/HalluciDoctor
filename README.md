@@ -4,7 +4,7 @@
 - This paper has been accepted by CVPR 2024!
 - This is the official repository for the paper "HalluciDoctor: Mitigating Hallucinatory Toxicity in Visual Instruction Data". 🍇 [[Read our arXiv Paper](https://arxiv.org/abs/2311.13614)].
 - We update the main code of **HalluciDoctor** and corresponding datasets *LLaVA+* and *LLaVA++*.
-- Release [LLaVA+](https://drive.google.com/file/d/1M0dZwF6nPuZMLeAH44VhFj0RCS4KxL5D/view?usp=sharing) and [LLaVA++](https://drive.google.com/file/d/1FDHLoq3f-nSmMkf_mPSZE6NMqytqiBqe/view?usp=sharing) models for MiniGPT4 with vicuna-7b.
+- Release [LLaVA+](https://drive.google.com/file/d/1M0dZwF6nPuZMLeAH44VhFj0RCS4KxL5D/view?usp=sharing) and [LLaVA++](https://drive.google.com/file/d/1FDHLoq3f-nSmMkf_mPSZE6NMqytqiBqe/view?usp=sharing) model checkpoints for MiniGPT4 with vicuna-7b.
 
 
 ## ⭐ Steps
