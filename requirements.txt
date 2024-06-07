@@ -53,7 +53,7 @@ torch==1.13.1+cu116
 torch_tb_profiler==0.4.3
 torchvision==0.14.1+cu116
 tqdm==4.66.1
-transformers==4.31.0
+transformers==4.38.0
 turbojpeg==0.0.2
 visual_genome==1.1.1
 webdataset==0.2.86
